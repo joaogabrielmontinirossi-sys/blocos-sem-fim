@@ -1,0 +1,17 @@
+{
+  "name": "Blocos Sem Fim",
+  "short_name": "Blocos Sem Fim",
+  "description": "Simulador 3D de blocos de montar com chão infinito e modelos prontos.",
+  "lang": "pt-BR",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#BFE4F8",
+  "theme_color": "#E0222C",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
