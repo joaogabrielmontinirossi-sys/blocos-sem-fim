@@ -1,5 +1,7 @@
 # Blocos Sem Fim
 
+[![Captura de tela do Blocos Sem Fim](docs/captura.png)](https://joaogabrielmontinirossi-sys.github.io/blocos-sem-fim/)
+
 Um simulador 3D de blocos de montar, só para lazer. O chão de pinos não tem fim, as peças encaixam onde você clica e há **38 modelos prontos** para montar peça por peça ou colocar de uma vez.
 
 Faz parte da família [Blocos](https://github.com/joaogabrielmontinirossi-sys/blocos), [Blocos 2](https://github.com/joaogabrielmontinirossi-sys/blocos2) e [Blocos 3](https://github.com/joaogabrielmontinirossi-sys/blocos3); aqui não há tarefas, só construção.
