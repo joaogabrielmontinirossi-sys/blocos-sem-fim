@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Blocos Sem Fim</title>
+<meta name="description" content="Blocos Sem Fim: um simulador 3D de blocos de montar com chão infinito e 38 modelos prontos para montar peça por peça.">
+<meta name="theme-color" content="#E0222C">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Blocos Sem Fim">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="c" aria-label="Área de construção 3D"></canvas>
+
+  <div id="top" class="panel">
+    <div class="brand">
+      <img src="logo.svg" width="30" height="30" alt="">
+      <b>Blocos Sem Fim</b><span id="count">0 peças</span>
+    </div>
+    <div class="tools" role="toolbar" aria-label="Ferramentas">
+      <button class="btn" data-tool="build" aria-pressed="true">Construir</button>
+      <button class="btn" data-tool="erase" aria-pressed="false">Apagar</button>
+      <button class="btn" data-tool="paint" aria-pressed="false">Pintar</button>
+      <button class="btn" data-tool="pick" aria-pressed="false">Copiar peça</button>
+      <span class="sep"></span>
+      <button class="btn" id="rot">Girar <kbd>R</kbd></button>
+      <button class="btn" id="undo" disabled>Desfazer</button>
+      <button class="btn" id="redo" disabled>Refazer</button>
+      <span class="sep"></span>
+      <button class="btn" id="syncChip" title="Sincronização">Só neste aparelho</button>
+    </div>
+    <div class="actions">
+      <button class="btn sun" id="openModels">Modelos prontos</button>
+      <button class="btn" id="more" aria-haspopup="true" aria-expanded="false">Mais</button>
+      <div id="menu" class="panel" hidden>
+        <button class="btn" id="home">Centralizar câmera</button>
+        <button class="btn" id="sound">Som: ligado</button>
+        <button class="btn" id="showHelp">Como jogar</button>
+        <button class="btn" id="openSync">Sincronização</button>
+        <button class="btn" id="export">Exportar backup</button>
+        <button class="btn" id="import">Importar backup</button>
+        <button class="btn" id="clear">Limpar tudo</button>
+      </div>
+    </div>
+  </div>
+
+  <aside id="pieces" class="panel" aria-label="Peças">
+    <div class="tabs" id="tabs"></div>
+    <div id="plist"></div>
+  </aside>
+
+  <div id="colors" class="panel" role="toolbar" aria-label="Cores"></div>
+
+  <div id="status" class="panel" hidden></div>
+  <div id="toast" class="panel" role="status"></div>
+
+  <div id="help" class="panel" hidden>
+    <h2>Como jogar</h2>
+    <ul id="helpList"></ul>
+    <button class="btn sun" id="closeHelp">Entendi</button>
+  </div>
+
+  <div id="gallery" hidden>
+    <div class="sheet panel" role="dialog" aria-label="Modelos prontos">
+      <header>
+        <h1>Modelos prontos</h1>
+        <button class="btn" id="closeGallery">Fechar</button>
+      </header>
+      <p>Monte peça por peça seguindo o guia, ou coloque o modelo inteiro de uma vez. Depois de escolher, clique no chão para posicionar.</p>
+      <div id="cats"></div>
+      <div id="grid"></div>
+    </div>
+  </div>
+
+  <div id="syncPanel" hidden>
+    <div class="sheet panel narrow" role="dialog" aria-label="Sincronização">
+      <header>
+        <h1>Sincronização</h1>
+        <button class="btn" id="closeSync">Fechar</button>
+      </header>
+      <div id="syncBody"></div>
+    </div>
+  </div>
+  <input type="file" id="filepick" accept=".json,application/json" hidden>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="app.js"></script>
+<script src="sync.js"></script>
+</body>
+</html>
